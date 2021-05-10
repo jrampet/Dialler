@@ -18,9 +18,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="78k-j0-K4i" kind="relationship" relationship="viewControllers" id="GtS-gx-koh"/>
-                        <segue destination="cvB-Ei-lv6" kind="relationship" relationship="viewControllers" id="5ts-ib-ZeQ"/>
-                        <segue destination="ErX-OO-740" kind="relationship" relationship="viewControllers" id="zff-2E-Gia"/>
+                        <segue destination="78k-j0-K4i" kind="relationship" relationship="viewControllers" id="KP9-Pi-r8u"/>
+                        <segue destination="cvB-Ei-lv6" kind="relationship" relationship="viewControllers" id="oS3-6e-sf0"/>
+                        <segue destination="ErX-OO-740" kind="relationship" relationship="viewControllers" id="igb-21-3oP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYT-cA-s0K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,7 +47,7 @@
         <scene sceneID="RfH-G5-kiw">
             <objects>
                 <navigationController id="78k-j0-K4i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" selectedImage="star.circle.fill" catalog="system" id="Fpp-cJ-yul"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star.circle" catalog="system" selectedImage="star.circle.fill" id="Fpp-cJ-yul"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AO1-o1-48J">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +64,7 @@
         <scene sceneID="4Ij-Oz-sgL">
             <objects>
                 <navigationController id="cvB-Ei-lv6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Keypad" selectedImage="phone.circle.fill" catalog="system" id="oJh-g4-GMR"/>
+                    <tabBarItem key="tabBarItem" title="Keypad" image="phone.circle" catalog="system" selectedImage="phone.circle.fill" id="oJh-g4-GMR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yAZ-no-J0E">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -81,7 +81,7 @@
         <scene sceneID="JuY-B9-lbi">
             <objects>
                 <navigationController id="ErX-OO-740" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" selectedImage="person.fill" catalog="system" id="CDa-lG-Ggp"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person" catalog="system" selectedImage="person.fill" id="CDa-lG-Ggp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q7g-3j-Fej">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,26 +97,359 @@
         <!--View Controller-->
         <scene sceneID="7eh-8P-OAr">
             <objects>
-                <viewController id="VjV-6F-6Kh" sceneMemberID="viewController">
+                <viewController id="VjV-6F-6Kh" customClass="ViewController" customModule="Navigation_Controller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chQ-qI-Jbo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cKZ-NC-818">
+                                <rect key="frame" x="15" y="238" width="380" height="560"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GUG-Yi-2Dh">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhG-aw-GVL" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="7Lm-AP-a5v"/>
+                                                    <constraint firstAttribute="height" constant="100" id="dmi-p6-V0O"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="1"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="j7t-GC-kv6"/>
+                                                    <action selector="pressedNumber:" destination="B9W-aq-3iR" eventType="touchUpInside" id="tlA-A0-vCq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1H-h3-ozb" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="deZ-SS-bRc"/>
+                                                    <constraint firstAttribute="width" constant="100" id="xIO-X1-wWg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="2"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="Cfn-gu-kot"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d73-kx-P3S" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="EjM-bn-wbp"/>
+                                                    <constraint firstAttribute="width" constant="100" id="rLa-1j-gGx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="3"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="Oag-PU-Ba9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="TeX-87-de7">
+                                        <rect key="frame" x="0.0" y="115" width="380" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83n-sJ-szo" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Cih-eu-JSr"/>
+                                                    <constraint firstAttribute="height" constant="100" id="o7s-h3-l4d"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="4"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="PaX-qd-LvN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph9-dV-LCU" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="HoL-W2-vNx"/>
+                                                    <constraint firstAttribute="width" constant="100" id="iZy-YF-Pia"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="5"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="mWN-eY-QWY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGx-Cf-fvN" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="qmH-Cu-Dnk"/>
+                                                    <constraint firstAttribute="height" constant="100" id="zmK-Ow-96r"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="6"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="XDb-5z-T1p"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="o2r-fh-qt3">
+                                        <rect key="frame" x="0.0" y="230" width="380" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9G-Ch-2s2" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="CqT-Wn-6mZ"/>
+                                                    <constraint firstAttribute="width" constant="100" id="UzB-j9-W8l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="7"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="qMU-OC-a4g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHh-db-ciw" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="R8a-Qk-nbK"/>
+                                                    <constraint firstAttribute="height" constant="100" id="VuY-S2-fgM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="8"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="UWL-3P-PCr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbB-h3-P0W" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="hXC-rU-a4i"/>
+                                                    <constraint firstAttribute="height" constant="100" id="kHv-wQ-iLd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="9"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="Onw-AF-Gmq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wf9-Ba-F06">
+                                        <rect key="frame" x="0.0" y="345" width="380" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycB-Mh-5x6" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4di-dO-iC0"/>
+                                                    <constraint firstAttribute="height" constant="100" id="S2c-XT-P5b"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="*"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="gQe-S3-ocw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqc-Y4-bek" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="EX5-GX-SJ9"/>
+                                                    <constraint firstAttribute="height" constant="100" id="IGi-rd-amG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="6h7-OE-OAB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftr-G5-RRU" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="eYP-SX-AdY"/>
+                                                    <constraint firstAttribute="width" constant="100" id="guJ-nN-cyo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="#"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="doN-JQ-VTL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-Qi-E3M">
+                                        <rect key="frame" x="0.0" y="460" width="380" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phh-AZ-iV1" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="h73-Ze-TAk"/>
+                                                    <constraint firstAttribute="height" constant="100" id="mSQ-3p-3F9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                <state key="normal" title="1"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETn-Do-ArU" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" red="0.47847139840000003" green="0.82437306639999997" blue="0.50972634549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="HcV-2j-ImN"/>
+                                                    <constraint firstAttribute="height" constant="100" id="I5H-CC-WGW"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="phone.fill" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKy-j6-LQv" customClass="RoundButton" customModule="Navigation_Controller" customModuleProvider="target">
+                                                <rect key="frame" x="280" y="0.0" width="100" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="RlH-2U-FFF"/>
+                                                    <constraint firstAttribute="width" constant="100" id="c0h-iZ-5g8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="43"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="⃖"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="roundButton" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onBackPressed:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="ddY-2A-M4S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cKZ-NC-818" secondAttribute="height" multiplier="19:28" id="rTh-8h-QYT"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-TE-XhF">
+                                <rect key="frame" x="150.5" y="182" width="114" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Add Number">
+                                    <color key="titleColor" red="0.3712623417" green="0.77962404490000003" blue="0.98045057059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="addN:" destination="B9W-aq-3iR" eventType="touchUpInside" id="Rhz-EV-Tny"/>
+                                    <action selector="addNumber:" destination="VjV-6F-6Kh" eventType="touchUpInside" id="RO0-SX-ATZ"/>
+                                    <action selector="addNumber:" destination="B9W-aq-3iR" eventType="touchUpInside" id="Wfb-iN-7tg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="987654320" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3d-gt-j7w">
+                                <rect key="frame" x="0.0" y="114.5" width="415" height="57.5"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingChange:" destination="VjV-6F-6Kh" eventType="editingChanged" id="zyu-j1-S8P"/>
+                                    <action selector="onValueChange:" destination="VjV-6F-6Kh" eventType="valueChanged" id="RLo-VH-ghg"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lVB-hM-LjQ"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rnc-TE-XhF" firstAttribute="centerX" secondItem="chQ-qI-Jbo" secondAttribute="centerX" id="2T3-q2-Ekm"/>
+                            <constraint firstAttribute="trailing" secondItem="cKZ-NC-818" secondAttribute="trailing" constant="20" symbolic="YES" id="8nT-eg-2Gs"/>
+                            <constraint firstAttribute="trailing" secondItem="cKZ-NC-818" secondAttribute="trailing" constant="20" id="Fdh-O9-chm"/>
+                            <constraint firstItem="Rnc-TE-XhF" firstAttribute="top" secondItem="o3d-gt-j7w" secondAttribute="bottom" constant="10" id="JGm-cB-hND"/>
+                            <constraint firstItem="cKZ-NC-818" firstAttribute="top" secondItem="Rnc-TE-XhF" secondAttribute="bottom" constant="20" id="JMJ-Dr-HC7"/>
+                            <constraint firstItem="lVB-hM-LjQ" firstAttribute="trailing" secondItem="o3d-gt-j7w" secondAttribute="trailing" id="Kfl-EE-dgu"/>
+                            <constraint firstItem="lVB-hM-LjQ" firstAttribute="bottom" secondItem="cKZ-NC-818" secondAttribute="bottom" constant="15" id="KrX-YX-c1d"/>
+                            <constraint firstItem="cKZ-NC-818" firstAttribute="leading" secondItem="lVB-hM-LjQ" secondAttribute="leading" constant="15" id="M0T-DF-QZi"/>
+                            <constraint firstItem="o3d-gt-j7w" firstAttribute="leading" secondItem="lVB-hM-LjQ" secondAttribute="leading" id="tQe-m2-ugL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UNg-i3-1qR"/>
+                    <connections>
+                        <outlet property="addButton" destination="Rnc-TE-XhF" id="i4F-HV-XLR"/>
+                        <outlet property="field" destination="o3d-gt-j7w" id="6Hl-fu-Bkp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3A-vn-bv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="B9W-aq-3iR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1271" y="1333"/>
+            <point key="canvasLocation" x="-1271.0144927536232" y="1331.9196428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Contact Controller-->
         <scene sceneID="3Bc-1h-ICo">
             <objects>
-                <viewController id="GKz-Zd-Srn" sceneMemberID="viewController">
+                <viewController id="GKz-Zd-Srn" customClass="contactController" customModule="Navigation_Controller" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pwn-Y1-rqg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U48-hD-Ai4">
+                                <rect key="frame" x="171" y="228" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onPressed:" destination="GKz-Zd-Srn" eventType="touchUpInside" id="yOe-Mz-a0f"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J1u-pA-kPJ"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
@@ -127,15 +460,69 @@
             <point key="canvasLocation" x="-565" y="1333"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="83n-sJ-szo">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="Cqc-Y4-bek">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="ETn-Do-ArU">
+            <size key="intrinsicContentSize" width="19.5" height="22"/>
+        </designable>
+        <designable name="FbB-h3-P0W">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="YHh-db-ciw">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="a9G-Ch-2s2">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="c1H-h3-ozb">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="d73-kx-P3S">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="ftr-G5-RRU">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="nhG-aw-GVL">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="ph9-dV-LCU">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="phh-AZ-iV1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="rGx-Cf-fvN">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="sKy-j6-LQv">
+            <size key="intrinsicContentSize" width="30" height="64"/>
+        </designable>
+        <designable name="ycB-Mh-5x6">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="phone.circle" catalog="system" width="128" height="121"/>
         <image name="phone.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="star.circle" catalog="system" width="128" height="121"/>
         <image name="star.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
